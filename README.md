@@ -1,10 +1,6 @@
-# ⚠️ Archived Repository
+This is copy of the original dataschool.com repo with a recreated backend. I assume it's okay to run it locally for educational purposes.
 
-Chartio and also dataschool.com were acquired by Atlassian in 2021. This repository is now archived and no further pull-requests will be accepted.
-
-# DataSchool.com
-
-This is the site powering dataschool.com.  Please contribute!
+---
 
 ## Installing Jekyll
 
