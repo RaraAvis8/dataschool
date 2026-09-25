@@ -82,24 +82,24 @@ TO_CHAR([date type], [pattern])
 
 where [date type] is a column or value of any of the above listed date/time data types, and [pattern] is a string indicating how to format the output date.  The main symbols you'll want to use to create your format patterns are here
 
-| Pattern | Description  | Example | Output |
-|---------|---------------|-----------|---------|
-| HH      | **H**our (01-12) | `TO_CHAR(TIME '4:15 pm', 'HH')`  | 04 |
-| HH24    | **H**our (01-24) | `TO_CHAR(TIME '4:15 pm', 'HH24')` | 16 |
-| MI      | **M**inute  | `TO_CHAR(TIME '4:15 pm', 'MI')`| 15 |
-| SS	    | **S**econds  | `TO_CHAR(TIME '4:15:23 pm', 'SS')`| 23 |
-| am      | displays whether time is **am** or pm  | `TO_CHAR(TIME '4:15 pm', 'am')` | am |
-| YY      | last 2 digits of the **Y**ear  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d"  }}', 'YY')` | {{ "now" | date: "%y"  }} |
-| YYYY    | 4 digits of the **Y**ear  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d"  }}', 'YY')` | {{ "now" | date: "%Y"  }} |
-| MM     | **M**onth # of the year.  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'MM')` | {{ "now" | date: "%m"  }} |
+| Pattern | Description  | Example | Output                          |
+|---------|---------------|-----------|---------------------------------|
+| HH      | **H**our (01-12) | `TO_CHAR(TIME '4:15 pm', 'HH')`  | 04                              |
+| HH24    | **H**our (01-24) | `TO_CHAR(TIME '4:15 pm', 'HH24')` | 16                              |
+| MI      | **M**inute  | `TO_CHAR(TIME '4:15 pm', 'MI')`| 15                              |
+| SS	    | **S**econds  | `TO_CHAR(TIME '4:15:23 pm', 'SS')`| 23                              |
+| am      | displays whether time is **am** or pm  | `TO_CHAR(TIME '4:15 pm', 'am')` | pm                              |
+| YY      | last 2 digits of the **Y**ear  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d"  }}', 'YY')`   | {{ "now" | date: "%y"  }} |
+| YYYY    | 4 digits of the **Y**ear  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d"  }}', 'YY')`   | {{ "now" | date: "%Y"  }} |
+| MM     | **M**onth # of the year.  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'MM')`    | {{ "now" | date: "%m"  }} |
 | Month   | written **Month** of the year capitalized  | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Month')` | {{ "now" | date: "%B"  }} |
-| Mon     | abbreviated of **Mon**th of year | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Mon')` | {{ "now" | date: "%b" }} |
-| DD      | Day # of the month          | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'DD')` | {{ "now" | date: "%d" }} |
-| Day     | written **Day** of the week | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Day')` | {{ "now" | date: "%A" }} |
-| Dy      | abbreviated **D**ay of the week |   `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Dy')` | {{ "now" | date: "%a" }} |
-| WW      | **W**eek # of the year | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'WW')` | {{ "now" | date: "%V" }} |
-| Q       | **Q**uarter of the year | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Q')` | {{ "now" | date: "%m" | divided_by: 4 | plus: 1 }} |
-| TZ      | **T**ime**Z**one | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'TZ')` | UTC |
+| Mon     | abbreviated of **Mon**th of year | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Mon')`   | {{ "now" | date: "%b" }} |
+| DD      | Day # of the month          | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'DD')`    | {{ "now" | date: "%d" }} |
+| Day     | written **Day** of the week | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Day')`   | {{ "now" | date: "%A" }} |
+| Dy      | abbreviated **D**ay of the week |   `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Dy')`    | {{ "now" | date: "%a" }} |
+| WW      | **W**eek # of the year | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'WW')`    | {{ "now" | date: "%V" }} |
+| Q       | **Q**uarter of the year | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'Q')`     | {{ "now" | date: "%m" | divided_by: 4 | plus: 1 }} |
+| TZ      | **T**ime**Z**one | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-%d" }}', 'TZ')`    | UTC |
 
 
 The above patterns can be string together to get the format you eventually want.  Some common outputs are:
@@ -129,10 +129,10 @@ You don't have to memorize these (it's hard to!).  It's just good to get familia
 
 There are a couple of extra tools you can use on patterns that output numbers.
 
-| Formatter | Description | Example  | Output |
-|-----------|-------------|----------|--------|
+| Formatter | Description | Example  | Output                         |
+|-----------|-------------|----------|--------------------------------|
 | FM        | **F**ill **M**ode will remove any 0's <br>at the front of a 2 digit number. | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-05" }}', 'FMDD')` | 5 |
-| th        | adds the ordinal suffixes <br>like **st**, **nd** or **th** to the end of a number | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-05" }}', 'FMDD')` | 05th |
+| th        | adds the ordinal suffixes <br>like **st**, **nd** or **th** to the end of a number | `TO_CHAR(DATE '{{ "now" | date: "%Y-%m-05" }}', 'DDth')` | 05th |
 
 And of course you can combine the two to get
 

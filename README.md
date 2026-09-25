@@ -8,7 +8,7 @@ This site is built with [Jekyll](https://jekyllrb.com/), a simple static site se
 
 1. Clone this repository: `git clone git@github.com:chartio/dataschool.git`
 1. Install homebrew with `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-1. Install jekyll and bundler with `sudo gem install bundler jekyll`.  Note you'll be prompeted to enter your computer's password to install.
+1. Install jekyll and bundler with `sudo gem install bundler jekyll`.  Note you'll be prompted to enter your computer's password to install.
 
 
 ## Building Jekyll
