@@ -9,6 +9,10 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 4.1.1"
+gem "csv"     # removed from Ruby 3.4 stdlib; Jekyll 4.1 requires it
+gem "base64"     # removed from Ruby 3.4 stdlib; safe_yaml requires it
+gem "bigdecimal" # removed from Ruby 3.4 stdlib; liquid requires it
+gem "webrick"    # removed from Ruby 3.4 stdlib; jekyll serve requires it
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"

@@ -1,0 +1,7 @@
+-- Read-only role used by the API. This is the real enforcement that
+-- tutorial users can only run SELECTs.
+CREATE ROLE readonly LOGIN PASSWORD 'readonly';
+GRANT CONNECT ON DATABASE herokuchinook TO readonly;
+GRANT USAGE ON SCHEMA public TO readonly;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO readonly;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO readonly;
